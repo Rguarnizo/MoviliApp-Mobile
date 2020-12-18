@@ -8,6 +8,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
+      theme: ThemeData(
+          primarySwatch: Colors.red,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          fontFamily: 'SourceSansPro'),
       debugShowCheckedModeBanner: false,
       routes: getRoutes(),
       initialRoute: 'Login',

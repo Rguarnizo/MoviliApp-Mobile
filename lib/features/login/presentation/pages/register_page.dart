@@ -19,21 +19,24 @@ class RegisterPage extends StatelessWidget {
 
     return Scaffold(
       appBar: getAppBar(),
-      body: Container(
-        height: heigth,
-        width: widht,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [Colors.red, Colors.red[900]]),
-        ),
-        child: Column(
-          children: [
-            _emailAndPassword(),
-            _extraInformation(),
-            
-          ],
+      body: SingleChildScrollView(
+          child: Container(
+          height: heigth,
+          width: widht,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Colors.red, Colors.red[900]]),
+          ),
+          child: Column(
+            children: [
+              _emailAndPassword(),
+              _extraInformation(),
+              _registerButton(),
+              
+            ],
+          ),
         ),
       ),
     );
@@ -72,6 +75,24 @@ class RegisterPage extends StatelessWidget {
         TextFormFieldApp(hint: 'Apellidos',icon: Icons.person_outline,),
         TextFormFieldApp(hint: 'Cedula',icon: Icons.card_membership_outlined,),
       ],),
+    );
+  }
+
+  _registerButton() {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10),
+      child: OutlinedButton.icon(
+              onPressed: () {},
+              icon: Icon(Icons.chevron_right, size: 18,color: Colors.white,),
+              style: ButtonStyle(
+              side: MaterialStateProperty.resolveWith((states) => BorderSide(color: Colors.white)),             
+              ),            
+              label: Text(
+                "Completar Registro",
+                style: TextStyle(fontSize: 20,color: Colors.white),
+                
+              ),
+            ),
     );
   }
 }

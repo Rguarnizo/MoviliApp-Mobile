@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:moviliapp_mobile/core/widgets/buttons.dart';
 import 'package:moviliapp_mobile/core/widgets/text_form_field.dart';
 
 class LoginPage extends StatelessWidget {
@@ -31,7 +30,7 @@ class LoginPage extends StatelessWidget {
                   height: 150,
                 ),
                 _formLogin(),
-                _createAccount(),
+                _createAccount(context),
               ],
             ),
           ),
@@ -94,7 +93,7 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  _createAccount() {
+  _createAccount(context) {
     return Stack(
       overflow: Overflow.visible,
       alignment: Alignment.center,
@@ -104,7 +103,7 @@ class LoginPage extends StatelessWidget {
         margin: EdgeInsets.only(top: 20),
         height: height * (0.2),
         width: width * (1 - 0.1),
-        child: _createAccountContent(),
+        child: _createAccountContent(context),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
@@ -124,13 +123,15 @@ class LoginPage extends StatelessWidget {
       ]);
   }
 
-  _createAccountContent() {
+  _createAccountContent(BuildContext context) {
     return Column(
       children: [
         Text('¿No tienes cuenta? Crea una...', style: TextStyle(fontSize: 18),),
         SizedBox(height: 15,),
         OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed('Register');
+            },
             icon: Icon(Icons.chevron_right, size: 18),
             label: Text(
               "Crear una cuenta",

@@ -60,6 +60,19 @@ class RegisterPage extends StatelessWidget {
     );
   }
 
-  _extraInformation() {}
+  _extraInformation() {
+    return Container(
+
+      decoration: BoxDecoration(color: Colors.white,
+      borderRadius: BorderRadius.circular(16)),
+      margin: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+      padding: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
+      child: Column(children: [
+        TextFormFieldApp(hint: 'Nombres',icon: Icons.person,),
+        TextFormFieldApp(hint: 'Apellidos',icon: Icons.person_outline,),
+        TextFormFieldApp(hint: 'Cedula',icon: Icons.card_membership_outlined,),
+      ],),
+    );
+  }
 }
 

@@ -82,7 +82,7 @@ class LoginPage extends StatelessWidget {
           ),
           OutlinedButton.icon(
             onPressed: () {
-              Navigator.of(context).pushNamed('Home');
+              Navigator.of(context).pushNamed('Main');
             },
             icon: Icon(Icons.chevron_right, size: 18),
             label: Text(

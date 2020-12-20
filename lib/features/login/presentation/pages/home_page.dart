@@ -7,7 +7,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      bottomNavigationBar: BottomNavigationBar(
+        items: [        
+          BottomNavigationBarItem(icon: Icon(Icons.directions_bus),label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.home_outlined),label: ''), 
+          BottomNavigationBarItem(icon: Icon(Icons.monetization_on),label: ''),        
+        ]
+        ),
     );
   }
 }

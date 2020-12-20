@@ -29,7 +29,7 @@ class LoginPage extends StatelessWidget {
                   width: 150,
                   height: 150,
                 ),
-                _formLogin(),
+                _formLogin(context),
                 _createAccount(context),
               ],
             ),
@@ -48,7 +48,7 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  _formLogin() {
+  _formLogin(context) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
@@ -81,7 +81,9 @@ class LoginPage extends StatelessWidget {
             height: 10,
           ),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed('Home');
+            },
             icon: Icon(Icons.chevron_right, size: 18),
             label: Text(
               "Iniciar Sesión",

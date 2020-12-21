@@ -8,18 +8,20 @@ class HomePage extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     final height = screenSize.height;
     final width = screenSize.width;
-    return Container(
-      height: height,
-      width: width,
-      color: Colors.red,
-      child: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            UserCard(),
-            WelcomeMessage(),
-            HistoryData(),
-          ],
+    return SingleChildScrollView(
+          child: Container(
+        height: height,
+        width: width,
+        color: Colors.red,
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              UserCard(),
+              WelcomeMessage(),
+              HistoryData(),
+            ],
+          ),
         ),
       ),
     );
@@ -131,7 +133,38 @@ class HistoryData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(      
-    );
+    final screenSize = MediaQuery.of(context).size;
+    final height = screenSize.height;
+    final width = screenSize.width;
+
+    return Container(
+        margin: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        width: width,
+        padding: EdgeInsets.all(15),
+        child: Column(
+          children: [
+            Text(
+              'Historial de viajes',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            Container(
+              height: 200,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
+                borderRadius: BorderRadius.circular(16),                
+              ),              
+              child: ListView(
+                children: [
+                  
+                ],
+              ),
+            )
+          ],
+        ));
   }
 }

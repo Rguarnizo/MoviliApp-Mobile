@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
     final height = screenSize.height;
     final width = screenSize.width;
     return SingleChildScrollView(
-          child: Container(
+      child: Container(
         height: height,
         width: width,
         color: Colors.red,
@@ -20,6 +20,7 @@ class HomePage extends StatelessWidget {
               UserCard(),
               WelcomeMessage(),
               HistoryData(),
+              Support(),
             ],
           ),
         ),
@@ -152,19 +153,52 @@ class HistoryData extends StatelessWidget {
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             Container(
-              height: 200,
+              height: 250,
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.grey[200],
-                borderRadius: BorderRadius.circular(16),                
-              ),              
+                borderRadius: BorderRadius.circular(16),
+              ),
               child: ListView(
-                children: [
-                  
-                ],
+                children: [],
               ),
             )
           ],
         ));
+  }
+}
+
+class Support extends StatelessWidget {
+  const Support({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final height = screenSize.height;
+    final width = screenSize.width;
+
+    return Container(
+      margin: EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      width: width,
+      padding: EdgeInsets.all(15),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Icon(Icons.support_agent),
+          Text(
+            'Contactanos...',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          ),
+          Text(
+            '3777777',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          )
+        ],
+      ),
+    );
   }
 }
